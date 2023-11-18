@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tic_tac_toe.test_tic_tac_toe &#8212; tic_tac_toe 0.0.post1.dev4+g9ad210b.d20231118 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=233b9934" />
+    <script src="../../_static/documentation_options.js?v=de548943"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for tic_tac_toe.test_tic_tac_toe</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">tic_tac_toe.tic_tac_toe</span> <span class="kn">import</span> <span class="n">main</span>
+
+<span class="c1"># Define test cases for the main game loop</span>
+<div class="viewcode-block" id="test_main_game">
+<a class="viewcode-back" href="../../api/tic_tac_toe.html#tic_tac_toe.test_tic_tac_toe.test_main_game">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;input_values, expected_output&quot;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">([</span><span class="s1">&#39;1 1&#39;</span><span class="p">,</span> <span class="s1">&#39;1 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 1&#39;</span><span class="p">,</span> <span class="s1">&#39;2 2&#39;</span><span class="p">,</span> <span class="s1">&#39;3 1&#39;</span><span class="p">],</span> <span class="p">[</span>
+        <span class="s2">&quot;Welcome to Tic-Tac-Toe!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X wins!&quot;</span><span class="p">,</span>
+    <span class="p">]),</span>
+    <span class="p">([</span><span class="s1">&#39;1 1&#39;</span><span class="p">,</span> <span class="s1">&#39;2 1&#39;</span><span class="p">,</span> <span class="s1">&#39;1 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 3&#39;</span><span class="p">,</span> <span class="s1">&#39;1 3&#39;</span><span class="p">,</span> <span class="s1">&#39;3 1&#39;</span><span class="p">,</span> <span class="s1">&#39;3 2&#39;</span><span class="p">,</span> <span class="s1">&#39;3 3&#39;</span><span class="p">],</span> <span class="p">[</span>
+        <span class="s2">&quot;Welcome to Tic-Tac-Toe!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;It&#39;s a tie!&quot;</span><span class="p">,</span>
+    <span class="p">]),</span>
+    <span class="p">([</span><span class="s1">&#39;1 1&#39;</span><span class="p">,</span> <span class="s1">&#39;1 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 2&#39;</span><span class="p">,</span> <span class="s1">&#39;2 3&#39;</span><span class="p">,</span> <span class="s1">&#39;3 1&#39;</span><span class="p">,</span> <span class="s1">&#39;3 2&#39;</span><span class="p">,</span> <span class="s1">&#39;3 3&#39;</span><span class="p">],</span> <span class="p">[</span>
+        <span class="s2">&quot;Welcome to Tic-Tac-Toe!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-----&quot;</span><span class="p">,</span>
+        <span class="s2">&quot; | | &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Invalid move. Try again.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player O&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Player X&#39;s turn&quot;</span><span class="p">,</span>
+    <span class="p">]),</span>
+<span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_main_game</span><span class="p">(</span><span class="n">input_values</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">,</span> <span class="n">capfd</span><span class="p">,</span> <span class="n">monkeypatch</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test the main game loop with different sets of input values and expected output.</span>
+
+<span class="sd">    This function runs multiple test cases to simulate games, providing input</span>
+<span class="sd">    values as if entered by players and checking if the game behaves as expected.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_values (list): List of strings representing player input.</span>
+<span class="sd">        expected_output (list): List of strings representing the expected output.</span>
+<span class="sd">        capfd (pytest.fixture): Capturing the standard output.</span>
+<span class="sd">        monkeypatch (pytest.fixture): Mocking the input function for testing.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+        <span class="n">monkeypatch</span><span class="o">.</span><span class="n">setattr</span><span class="p">(</span><span class="s1">&#39;builtins.input&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">input_values</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">main</span><span class="p">()</span>
+
+    <span class="n">out</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">capfd</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>
+    <span class="n">output_lines</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Check if the actual output matches the expected output</span>
+    <span class="k">assert</span> <span class="n">output_lines</span> <span class="o">==</span> <span class="n">expected_output</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">tic_tac_toe</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributions &amp; Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">Module Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Mark Moujabber.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
